@@ -1,0 +1,16 @@
+node_modules/
+.env
+dist/
+.DS_Store
+
+# Secrets — never commit
+client/client_secret_*.json
+
+# User uploads
+server/uploads/
+
+# Dev prompts
+client/claude-code-prompt.md
+
+# Claude Code
+.claude/
