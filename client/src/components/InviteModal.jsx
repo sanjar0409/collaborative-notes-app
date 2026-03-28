@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
+import { motion } from 'motion/react';
 import api from '../lib/api';
 import { Button, IconButton } from './ui/Button';
 
@@ -35,10 +36,26 @@ export default function InviteModal({ noteId, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 animate-fade-in" onClick={onClose} role="dialog" aria-modal="true" aria-label="Share note">
-      <div className="bg-white rounded-card-lg p-6 w-full max-w-md shadow-context" onClick={(e) => e.stopPropagation()}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/40 flex items-center justify-center z-50"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Share note"
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.2, ease: [0.32, 0.72, 0, 1] }}
+        className="bg-surface-main rounded-card-lg p-6 w-full max-w-md shadow-context"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-task-label font-semibold text-content-primary">Share Note</h3>
+          <h3 className="text-task-label font-semibold font-serif text-content-primary">Share Note</h3>
           <IconButton
             icon={<X />}
             size="sm"
@@ -78,7 +95,7 @@ export default function InviteModal({ noteId, onClose }) {
             </Button>
           </div>
         </form>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

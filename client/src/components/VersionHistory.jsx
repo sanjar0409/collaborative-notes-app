@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X, RotateCcw } from 'lucide-react';
+import { motion } from 'motion/react';
 import api from '../lib/api';
 import { Button, IconButton, ButtonSpinner } from './ui/Button';
 
@@ -46,10 +47,26 @@ export default function VersionHistory({ noteId, onRestore, isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/40 flex items-center justify-end z-50 animate-fade-in" onClick={onClose} role="dialog" aria-modal="true" aria-label="Version history">
-      <div className="bg-white h-full w-sidebar shadow-sidebar p-6 overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/40 flex items-center justify-end z-50"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Version history"
+    >
+      <motion.div
+        initial={{ x: '100%' }}
+        animate={{ x: 0 }}
+        exit={{ x: '100%' }}
+        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+        className="bg-surface-main h-full w-sidebar shadow-sidebar p-6 overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="flex items-center justify-between mb-6">
-          <h3 className="text-task-label font-semibold text-content-primary">Version History</h3>
+          <h3 className="text-task-label font-semibold font-serif text-content-primary">Version History</h3>
           <IconButton
             icon={<X />}
             size="sm"
@@ -91,7 +108,7 @@ export default function VersionHistory({ noteId, onRestore, isOpen, onClose }) {
             ))}
           </div>
         )}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

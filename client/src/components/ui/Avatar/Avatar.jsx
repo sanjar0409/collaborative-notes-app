@@ -23,7 +23,7 @@ export function Avatar({
     <div className={cn('relative inline-flex items-center gap-1.5', className)}>
       <div
         className={cn(
-          'relative shrink-0 rounded-full border-2 border-white shadow-sm',
+          'relative shrink-0 rounded-full border-2 border-surface-main shadow-sm',
           'flex items-center justify-center overflow-hidden',
           'bg-primary-light text-primary font-semibold',
           s.container, s.text,
@@ -38,7 +38,7 @@ export function Avatar({
         {statusDot && (
           <span
             className={cn(
-              'absolute bottom-0 right-0 rounded-full bg-success border-2 border-white',
+              'absolute bottom-0 right-0 rounded-full bg-success border-2 border-surface-main',
               s.dot,
               statusPulse && 'animate-pulse-dot',
             )}

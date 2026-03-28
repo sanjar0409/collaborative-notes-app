@@ -32,18 +32,21 @@ export function AuthProvider({ children }) {
 
   const login = useCallback(async (email, password) => {
     const res = await api.post('/auth/login', { email, password });
+    if (res.data.token) localStorage.setItem('token', res.data.token);
     setUser(res.data.user);
     return res.data.user;
   }, []);
 
   const signup = useCallback(async (name, email, password) => {
     const res = await api.post('/auth/signup', { name, email, password });
+    if (res.data.token) localStorage.setItem('token', res.data.token);
     setUser(res.data.user);
     return res.data.user;
   }, []);
 
   const googleLogin = useCallback(async (credential) => {
     const res = await api.post('/auth/google', { credential });
+    if (res.data.token) localStorage.setItem('token', res.data.token);
     setUser(res.data.user);
     return res.data.user;
   }, []);
@@ -66,6 +69,7 @@ export function AuthProvider({ children }) {
 
   const logout = useCallback(async () => {
     disconnectSocket();
+    localStorage.removeItem('token');
     try {
       await api.post('/auth/logout');
     } catch {

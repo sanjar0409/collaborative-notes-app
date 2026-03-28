@@ -32,7 +32,7 @@ export default function SharedNotes({ currentNoteId }) {
   if (displayNotes.length === 0) return null;
 
   return (
-    <div className="p-5 border-t border-content-border bg-white">
+    <div className="p-5 border-t border-content-border bg-surface-main">
       <h3 className="text-body font-semibold text-content-primary mb-2">Shared Notes</h3>
       <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
         {displayNotes.map((note) => (
@@ -40,7 +40,7 @@ export default function SharedNotes({ currentNoteId }) {
             key={note.id}
             to={`/notes/${note.id}`}
             className={cn(
-              'flex-shrink-0 w-56 p-3 rounded-card border border-content-border bg-white',
+              'flex-shrink-0 w-56 p-3 rounded-card border border-content-border bg-surface-main',
               'hover:shadow-md hover:border-primary/30 transition-all duration-180',
               'group'
             )}

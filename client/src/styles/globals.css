@@ -1,32 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #3b82f6;
-  --color-primary-light: #eff6ff;
-  --color-primary-hover: #1d4ed8;
-  --color-primary-pressed: #1e40af;
+  --color-primary: #1a6b5a;
+  --color-primary-light: #f0f7f5;
+  --color-primary-hover: #145649;
+  --color-primary-pressed: #0f4138;
 
-  --color-secondary: #64748b;
-  --color-secondary-light: #f1f5f9;
-  --color-secondary-hover: #475569;
-  --color-secondary-pressed: #334155;
+  --color-secondary: #78716c;
+  --color-secondary-light: #f5f2ee;
+  --color-secondary-hover: #57534e;
+  --color-secondary-pressed: #44403c;
 
-  --color-danger: #ef4444;
-  --color-danger-hover: #dc2626;
-  --color-danger-pressed: #991b1b;
-  --color-danger-light: #fca5a5;
+  --color-danger: #c4653a;
+  --color-danger-hover: #a8522d;
+  --color-danger-pressed: #8c4124;
+  --color-danger-light: #fde8de;
 
-  --color-success: #16a34a;
+  --color-success: #1a6b5a;
 
-  --color-surface-main: #FFFFFF;
-  --color-surface-secondary: #f8fafc;
-  --color-surface-toolbar: #fafafa;
+  --color-surface-main: #faf8f5;
+  --color-surface-secondary: #f5f2ee;
+  --color-surface-toolbar: #f5f2ee;
 
-  --color-content-primary: #1e293b;
-  --color-content-secondary: #64748b;
-  --color-content-disabled: #94a3b8;
-  --color-content-border: #e2e8f0;
-  --color-content-border-muted: #cbd5e1;
+  --color-content-primary: #2d2a26;
+  --color-content-secondary: #78716c;
+  --color-content-disabled: #a8a29e;
+  --color-content-border: #e7e0d8;
+  --color-content-border-muted: #d6cec4;
 
   --color-badge-emma: #fca5a5;
   --color-badge-john: #6ee7b7;
@@ -36,14 +36,15 @@
   --color-highlight-green: #bbf7d0;
   --color-highlight-orange: #fef3c7;
 
-  --color-auth-bg: #f1f5f9;
-  --color-auth-github: #1e293b;
-  --color-auth-gradient-start: #1d4ed8;
-  --color-auth-gradient-end: #4f46e5;
-  --color-auth-divider: #cbd5e1;
-  --color-auth-error: #ef4444;
+  --color-auth-bg: #f0ebe4;
+  --color-auth-github: #2d2a26;
+  --color-auth-gradient-start: #1a6b5a;
+  --color-auth-gradient-end: #145649;
+  --color-auth-divider: #d6cec4;
+  --color-auth-error: #c4653a;
 
-  --font-sans: 'Inter', 'SF Pro Display', system-ui, sans-serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
 
   --font-size-app-title: 18px;
   --font-size-page-heading: 24px;
@@ -64,21 +65,21 @@
   --radius-card-xl: 20px;
   --radius-input: 12px;
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.10);
-  --shadow-xl: 0 8px 30px rgba(0, 0, 0, 0.12);
-  --shadow-toolbar: 0 2px 6px rgba(0, 0, 0, 0.06);
-  --shadow-sidebar: -4px 0 16px rgba(0, 0, 0, 0.08);
-  --shadow-sheet: 0 -8px 32px rgba(0, 0, 0, 0.15);
-  --shadow-float: 0 4px 12px rgba(0, 0, 0, 0.12);
-  --shadow-context: 0 8px 40px rgba(0, 0, 0, 0.20), 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-auth-card: 0 8px 40px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-primary-glow: 0 4px 14px rgba(29, 78, 216, 0.35);
-  --shadow-primary-glow-hover: 0 6px 20px rgba(29, 78, 216, 0.45);
-  --shadow-danger-glow: 0 2px 6px rgba(239, 68, 68, 0.35);
-  --shadow-focus-ring: 0 0 0 3px rgba(29, 78, 216, 0.15);
-  --shadow-focus-ring-danger: 0 0 0 3px rgba(239, 68, 68, 0.15);
+  --shadow-sm: 0 1px 2px rgba(45, 42, 38, 0.05);
+  --shadow-md: 0 2px 8px rgba(45, 42, 38, 0.08);
+  --shadow-lg: 0 4px 16px rgba(45, 42, 38, 0.10);
+  --shadow-xl: 0 8px 30px rgba(45, 42, 38, 0.12);
+  --shadow-toolbar: 0 2px 6px rgba(45, 42, 38, 0.06);
+  --shadow-sidebar: -4px 0 16px rgba(45, 42, 38, 0.08);
+  --shadow-sheet: 0 -8px 32px rgba(45, 42, 38, 0.15);
+  --shadow-float: 0 4px 12px rgba(45, 42, 38, 0.12);
+  --shadow-context: 0 8px 40px rgba(45, 42, 38, 0.18), 0 2px 8px rgba(45, 42, 38, 0.06);
+  --shadow-auth-card: 0 8px 40px rgba(45, 42, 38, 0.08), 0 2px 8px rgba(45, 42, 38, 0.04);
+  --shadow-primary-glow: 0 4px 14px rgba(26, 107, 90, 0.35);
+  --shadow-primary-glow-hover: 0 6px 20px rgba(26, 107, 90, 0.45);
+  --shadow-danger-glow: 0 2px 6px rgba(196, 101, 58, 0.35);
+  --shadow-focus-ring: 0 0 0 3px rgba(26, 107, 90, 0.15);
+  --shadow-focus-ring-danger: 0 0 0 3px rgba(196, 101, 58, 0.15);
 
   --spacing-sidebar: 300px;
   --spacing-header: 56px;
@@ -117,14 +118,146 @@
   to { opacity: 1; }
 }
 @keyframes highlight-flash {
-  0% { box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.4); background-color: rgba(29, 78, 216, 0.08); }
+  0% { box-shadow: 0 0 0 3px rgba(26, 107, 90, 0.4); background-color: rgba(26, 107, 90, 0.08); }
   100% { box-shadow: 0 0 0 0 transparent; background-color: transparent; }
+}
+@keyframes entrance-fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @layer base {
   :root {
-    --gradient-primary: linear-gradient(135deg, #1d4ed8, #4f46e5);
-    --auth-mesh-gradient: linear-gradient(135deg, rgba(29,78,216,0.05), rgba(79,70,229,0.05));
+    --gradient-primary: linear-gradient(135deg, #1a6b5a, #145649);
+    --auth-mesh-gradient: radial-gradient(ellipse at 30% 20%, rgba(26, 107, 90, 0.06), transparent 50%),
+                          radial-gradient(ellipse at 70% 80%, rgba(196, 101, 58, 0.04), transparent 50%),
+                          linear-gradient(180deg, #f0ebe4, #e8e2d9);
+  }
+
+  /* Dark mode via class */
+  :root.dark {
+    --color-primary: #2d9b83;
+    --color-primary-light: #1a2e29;
+    --color-primary-hover: #3db89c;
+    --color-primary-pressed: #4ecbad;
+
+    --color-secondary: #9b9488;
+    --color-secondary-light: #2d2b27;
+    --color-secondary-hover: #b5ada2;
+    --color-secondary-pressed: #cfc6ba;
+
+    --color-danger: #e07a52;
+    --color-danger-hover: #e8936f;
+    --color-danger-pressed: #f0ac8c;
+    --color-danger-light: #3d2a1f;
+
+    --color-success: #2d9b83;
+
+    --color-surface-main: #1c1b19;
+    --color-surface-secondary: #272520;
+    --color-surface-toolbar: #272520;
+
+    --color-content-primary: #ede8e0;
+    --color-content-secondary: #9b9488;
+    --color-content-disabled: #6b6560;
+    --color-content-border: #3d3a35;
+    --color-content-border-muted: #4a463f;
+
+    --color-highlight-yellow: #3d3820;
+    --color-highlight-green: #1f3d2d;
+    --color-highlight-orange: #3d3320;
+
+    --color-auth-bg: #1c1b19;
+    --color-auth-github: #ede8e0;
+    --color-auth-gradient-start: #2d9b83;
+    --color-auth-gradient-end: #237a67;
+    --color-auth-divider: #4a463f;
+    --color-auth-error: #e07a52;
+
+    --gradient-primary: linear-gradient(135deg, #2d9b83, #237a67);
+    --auth-mesh-gradient: radial-gradient(ellipse at 30% 20%, rgba(45, 155, 131, 0.08), transparent 50%),
+                          radial-gradient(ellipse at 70% 80%, rgba(224, 122, 82, 0.05), transparent 50%),
+                          linear-gradient(180deg, #1c1b19, #17160f);
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 8px 30px rgba(0, 0, 0, 0.35);
+    --shadow-toolbar: 0 2px 6px rgba(0, 0, 0, 0.2);
+    --shadow-sidebar: -4px 0 16px rgba(0, 0, 0, 0.25);
+    --shadow-sheet: 0 -8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-float: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --shadow-context: 0 8px 40px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-auth-card: 0 8px 40px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.15);
+    --shadow-primary-glow: 0 4px 14px rgba(45, 155, 131, 0.3);
+    --shadow-primary-glow-hover: 0 6px 20px rgba(45, 155, 131, 0.4);
+    --shadow-danger-glow: 0 2px 6px rgba(224, 122, 82, 0.3);
+    --shadow-focus-ring: 0 0 0 3px rgba(45, 155, 131, 0.2);
+    --shadow-focus-ring-danger: 0 0 0 3px rgba(224, 122, 82, 0.2);
+  }
+
+  /* Auto dark mode from system preference */
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light) {
+      --color-primary: #2d9b83;
+      --color-primary-light: #1a2e29;
+      --color-primary-hover: #3db89c;
+      --color-primary-pressed: #4ecbad;
+
+      --color-secondary: #9b9488;
+      --color-secondary-light: #2d2b27;
+      --color-secondary-hover: #b5ada2;
+      --color-secondary-pressed: #cfc6ba;
+
+      --color-danger: #e07a52;
+      --color-danger-hover: #e8936f;
+      --color-danger-pressed: #f0ac8c;
+      --color-danger-light: #3d2a1f;
+
+      --color-success: #2d9b83;
+
+      --color-surface-main: #1c1b19;
+      --color-surface-secondary: #272520;
+      --color-surface-toolbar: #272520;
+
+      --color-content-primary: #ede8e0;
+      --color-content-secondary: #9b9488;
+      --color-content-disabled: #6b6560;
+      --color-content-border: #3d3a35;
+      --color-content-border-muted: #4a463f;
+
+      --color-highlight-yellow: #3d3820;
+      --color-highlight-green: #1f3d2d;
+      --color-highlight-orange: #3d3320;
+
+      --color-auth-bg: #1c1b19;
+      --color-auth-github: #ede8e0;
+      --color-auth-gradient-start: #2d9b83;
+      --color-auth-gradient-end: #237a67;
+      --color-auth-divider: #4a463f;
+      --color-auth-error: #e07a52;
+
+      --gradient-primary: linear-gradient(135deg, #2d9b83, #237a67);
+      --auth-mesh-gradient: radial-gradient(ellipse at 30% 20%, rgba(45, 155, 131, 0.08), transparent 50%),
+                            radial-gradient(ellipse at 70% 80%, rgba(224, 122, 82, 0.05), transparent 50%),
+                            linear-gradient(180deg, #1c1b19, #17160f);
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.25);
+      --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.3);
+      --shadow-xl: 0 8px 30px rgba(0, 0, 0, 0.35);
+      --shadow-toolbar: 0 2px 6px rgba(0, 0, 0, 0.2);
+      --shadow-sidebar: -4px 0 16px rgba(0, 0, 0, 0.25);
+      --shadow-sheet: 0 -8px 32px rgba(0, 0, 0, 0.4);
+      --shadow-float: 0 4px 12px rgba(0, 0, 0, 0.3);
+      --shadow-context: 0 8px 40px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+      --shadow-auth-card: 0 8px 40px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.15);
+      --shadow-primary-glow: 0 4px 14px rgba(45, 155, 131, 0.3);
+      --shadow-primary-glow-hover: 0 6px 20px rgba(45, 155, 131, 0.4);
+      --shadow-danger-glow: 0 2px 6px rgba(224, 122, 82, 0.3);
+      --shadow-focus-ring: 0 0 0 3px rgba(45, 155, 131, 0.2);
+      --shadow-focus-ring-danger: 0 0 0 3px rgba(224, 122, 82, 0.2);
+    }
   }
 
   * {
@@ -134,7 +267,7 @@
   }
 
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background-color: var(--color-auth-bg);
     color: var(--color-content-primary);
   }
@@ -154,19 +287,29 @@
 
   .glass-header {
     backdrop-filter: blur(20px) saturate(180%);
-    background: rgba(255, 255, 255, 0.72);
+    background: rgba(250, 248, 245, 0.85);
+  }
+
+  :root.dark .glass-header {
+    background: rgba(28, 27, 25, 0.85);
   }
 
   .auth-mesh-bg {
     background: var(--auth-mesh-gradient);
+  }
+
+  .auth-dot-bg {
+    background-image: radial-gradient(circle, var(--color-content-border) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 }
 
 .editor-content {
   min-height: 400px;
   outline: none;
-  line-height: 1.8;
-  font-size: 15px;
+  line-height: 1.85;
+  font-size: 16px;
+  font-family: 'Source Serif 4', Georgia, serif;
 }
 
 .editor-content .tiptap {
@@ -182,9 +325,9 @@
   pointer-events: none;
 }
 
-.editor-content h1 { font-size: 1.75rem; font-weight: 700; margin: 0.5rem 0; }
-.editor-content h2 { font-size: 1.5rem; font-weight: 600; margin: 0.5rem 0; }
-.editor-content h3 { font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0; }
+.editor-content h1 { font-size: 1.75rem; font-weight: 700; margin: 0.5rem 0; font-family: 'Source Serif 4', Georgia, serif; }
+.editor-content h2 { font-size: 1.5rem; font-weight: 600; margin: 0.5rem 0; font-family: 'Source Serif 4', Georgia, serif; }
+.editor-content h3 { font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0; font-family: 'Source Serif 4', Georgia, serif; }
 .editor-content ul, .editor-content ol { padding-left: 1.5rem; margin: 0.5rem 0; }
 .editor-content li { margin: 0.25rem 0; }
 

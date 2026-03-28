@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, ArrowLeft } from 'lucide-react';
+import { motion } from 'motion/react';
 import { useAuth } from '../context/AuthContext';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { Button, SocialButton, IconButton } from '../components/ui/Button';
@@ -79,7 +80,7 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center auth-mesh-bg px-4 pt-safe-top pb-safe-bottom">
+    <div className="min-h-screen flex flex-col items-center justify-center auth-mesh-bg auth-dot-bg px-4 pt-safe-top pb-safe-bottom">
       {isMobile && (
         <div className="w-full max-w-[420px] mb-4">
           <Link to="/login">
@@ -90,15 +91,20 @@ export default function Register() {
         </div>
       )}
 
-      <div className="w-full max-w-[420px] md:bg-white md:rounded-card-xl md:shadow-auth-card md:p-10">
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
+        className="w-full max-w-[420px] md:bg-surface-main md:rounded-card-xl md:shadow-auth-card md:p-10"
+      >
         <div className="text-center mb-8">
           <div className="w-9 h-9 mx-auto mb-3 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-white text-lg font-bold">N</span>
+            <span className="text-white text-lg font-serif font-bold">N</span>
           </div>
         </div>
 
         <div className="text-center mb-6">
-          <h2 className={isMobile ? 'text-page-heading-mobile font-bold' : 'text-page-heading font-bold'}>
+          <h2 className={`font-serif ${isMobile ? 'text-page-heading-mobile font-bold' : 'text-page-heading font-bold'}`}>
             Create your account
           </h2>
           <p className="text-body text-content-secondary mt-1">
@@ -188,7 +194,7 @@ export default function Register() {
             Sign in
           </Link>
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 }

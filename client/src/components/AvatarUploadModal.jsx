@@ -54,7 +54,7 @@ export default function AvatarUploadModal({ onClose }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 animate-fade-in" onClick={onClose} role="dialog" aria-modal="true" aria-label="Update avatar">
       <div
-        className="bg-white rounded-card-xl shadow-auth-card p-6 w-full max-w-sm mx-4"
+        className="bg-surface-main rounded-card-xl shadow-auth-card p-6 w-full max-w-sm mx-4"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-4">

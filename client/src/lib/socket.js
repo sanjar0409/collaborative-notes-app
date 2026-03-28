@@ -6,9 +6,11 @@ let socket = null;
 
 export const getSocket = () => {
   if (!socket) {
+    const token = localStorage.getItem('token');
     socket = io(SOCKET_URL, {
       withCredentials: true,
       autoConnect: false,
+      auth: { token },
     });
   }
   return socket;
@@ -16,6 +18,8 @@ export const getSocket = () => {
 
 export const connectSocket = () => {
   const s = getSocket();
+  const token = localStorage.getItem('token');
+  if (token) s.auth = { token };
   if (!s.connected) s.connect();
   return s;
 };

@@ -49,6 +49,7 @@ const googleLogin = async (req, res) => {
     setAuthCookie(res, token);
     res.json({
       user: { id: user.id, name: user.name, email: user.email, avatar_url: user.avatar_url },
+      token,
     });
   } catch (err) {
     console.error('Google login error:', err);

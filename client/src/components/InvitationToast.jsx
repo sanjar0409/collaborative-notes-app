@@ -26,7 +26,7 @@ export default function InvitationToast({ invitations, onAccept, onDecline }) {
       {invitations.map((inv) => (
         <div
           key={inv.id}
-          className="bg-white rounded-card shadow-context border border-content-border p-4 animate-fade-in"
+          className="bg-surface-main rounded-card shadow-context border border-content-border p-4 animate-fade-in"
           role="alert"
         >
           <p className="text-body text-content-primary mb-3">

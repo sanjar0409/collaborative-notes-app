@@ -8,7 +8,7 @@ const variantStyles = {
     'hover:bg-primary-hover hover:shadow-primary-glow hover:-translate-y-px',
     'active:bg-primary-pressed active:shadow-none active:translate-y-0 active:scale-[0.98]',
     'focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2',
-    'disabled:bg-content-disabled disabled:text-content-border disabled:shadow-none',
+    'disabled:bg-content-disabled disabled:text-content-disabled disabled:shadow-none',
     'disabled:cursor-not-allowed disabled:hover:translate-y-0',
   ),
   gradient: cn(
@@ -16,7 +16,7 @@ const variantStyles = {
     'hover:shadow-primary-glow-hover hover:-translate-y-px',
     'active:shadow-none active:translate-y-0 active:scale-[0.98]',
     'focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2',
-    'disabled:bg-content-disabled disabled:text-content-border disabled:shadow-none',
+    'disabled:bg-content-disabled disabled:text-content-disabled disabled:shadow-none',
     'disabled:cursor-not-allowed disabled:hover:translate-y-0',
   ),
   outline: cn(
@@ -35,9 +35,9 @@ const variantStyles = {
     'disabled:text-content-disabled disabled:cursor-not-allowed',
   ),
   secondary: cn(
-    'bg-gray-200 text-content-primary shadow-sm border-[1.5px] border-content-border',
-    'hover:bg-gray-300 hover:border-content-border-muted',
-    'active:bg-gray-400',
+    'bg-surface-secondary text-content-primary shadow-sm border-[1.5px] border-content-border',
+    'hover:bg-content-border hover:border-content-border-muted',
+    'active:bg-content-border-muted',
     'focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2',
     'disabled:text-content-disabled disabled:cursor-not-allowed',
   ),

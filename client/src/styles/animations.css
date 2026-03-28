@@ -60,3 +60,11 @@
 .animate-swipe-hint {
   animation: swipe-hint 1.5s ease-in-out 2;
 }
+
+.animate-fade-in {
+  animation: fade-in 200ms ease-out;
+}
+
+.animate-entrance {
+  animation: entrance-fade-up 400ms cubic-bezier(0.32, 0.72, 0, 1) both;
+}

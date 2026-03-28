@@ -6,13 +6,15 @@ import Underline from '@tiptap/extension-underline';
 import TextAlign from '@tiptap/extension-text-align';
 import Highlight from '@tiptap/extension-highlight';
 import Placeholder from '@tiptap/extension-placeholder';
-import { UserPlus, MessageSquare, Clock, ArrowLeft, Bell } from 'lucide-react';
+import { UserPlus, MessageSquare, Clock, ArrowLeft, Bell, Sun, Moon } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 import { useAuth } from '../context/AuthContext';
 import { useSocket } from '../context/SocketContext';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { useNoteData } from '../hooks/useNoteData';
 import { useNoteCollaboration } from '../hooks/useNoteCollaboration';
 import { useNotifications } from '../hooks/useNotifications';
+import { useTheme } from '../hooks/useTheme';
 import Toolbar from '../components/Toolbar';
 import Editor from '../components/Editor';
 import OnlineUsers from '../components/OnlineUsers';
@@ -38,6 +40,7 @@ export default function NoteEditor() {
   const { id } = useParams();
   const { user } = useAuth();
   const { socketRef: globalSocketRef } = useSocket();
+  const { theme, toggleTheme } = useTheme();
 
   const [showInvite, setShowInvite] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
@@ -188,15 +191,15 @@ export default function NoteEditor() {
   return (
     <div className="min-h-screen bg-auth-bg flex flex-col">
       <header aria-label="Note editor header">
-        <nav className="bg-white border-b border-content-border px-4 h-header flex items-center justify-between sticky top-0 z-50">
+        <nav className="bg-surface-main border-b border-content-border px-4 h-header flex items-center justify-between sticky top-0 z-50">
           <div className="flex items-center gap-3">
             <Link to="/" className="flex items-center gap-2">
               <IconButton icon={<ArrowLeft />} size="sm" aria-label="Back to dashboard" />
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white text-sm font-bold">N</span>
+                <span className="text-white text-sm font-serif font-bold">N</span>
               </div>
-              <span className="text-app-title text-content-primary hidden sm:block">
-                Real-time Collaborative Notes App
+              <span className="text-app-title font-serif text-content-primary hidden sm:block">
+                CollabNotes
               </span>
             </Link>
           </div>
@@ -226,7 +229,7 @@ export default function NoteEditor() {
                 badge={unreadCount > 0 ? unreadCount : undefined}
               />
               {showNotifications && (
-                <div className="absolute right-0 top-full mt-1 w-72 bg-white border border-content-border rounded-card shadow-lg z-50 overflow-hidden" role="menu" aria-label="Notifications">
+                <div className="absolute right-0 top-full mt-1 w-72 bg-surface-main border border-content-border rounded-card shadow-lg z-50 overflow-hidden" role="menu" aria-label="Notifications">
                   <div className="px-3 py-2 border-b border-content-border">
                     <span className="text-body font-semibold text-content-primary">Notifications</span>
                   </div>
@@ -254,6 +257,13 @@ export default function NoteEditor() {
               )}
             </div>
 
+            <IconButton
+              icon={theme === 'dark' ? <Sun /> : <Moon />}
+              size="sm"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              onClick={toggleTheme}
+            />
+
             <OnlineUsers users={noteUsers.filter((u) => u.userId !== user?.id)} />
 
             <button
@@ -269,7 +279,7 @@ export default function NoteEditor() {
 
       <main aria-label="Note editor content" className="flex flex-1 overflow-hidden gap-5">
         <div className="flex-1 flex flex-col overflow-x-auto gap-5">
-          <section aria-label="Note editor" className="flex-1 flex flex-col bg-white overflow-hidden">
+          <section aria-label="Note editor" className="flex-1 flex flex-col bg-surface-main overflow-hidden">
             {canEdit && <Toolbar editor={editor} />}
             <div className="p-5">
               <label htmlFor="note-title" className="sr-only">Note title</label>
@@ -278,7 +288,7 @@ export default function NoteEditor() {
                 type="text"
                 value={title}
                 onChange={handleTitleChange}
-                className="w-full text-page-heading font-bold text-content-primary focus:outline-none border-none bg-transparent"
+                className="w-full text-page-heading font-bold font-serif text-content-primary focus:outline-none border-none bg-transparent"
                 placeholder="Note Title"
                 readOnly={!canEdit}
               />
@@ -297,36 +307,42 @@ export default function NoteEditor() {
           </section>
         </div>
 
-        {showComments && (
-          <aside
-            aria-label="Comments and file sharing"
-            className="w-sidebar grid bg-white border-l border-content-border gap-5 overflow-hidden"
-            style={{ gridTemplateRows: '2.5fr 0.7fr' }}
-          >
-            <div className="overflow-hidden min-h-0">
-              <MemoizedCommentSidebar
-                comments={comments}
-                onAddComment={emitAddComment}
-                onResolve={emitResolveComment}
-                onDelete={emitDeleteComment}
-                currentUserId={user?.id}
-                highlightId={
-                  highlightTarget?.type === 'comment' || highlightTarget?.type === 'comment-resolve'
-                    ? highlightTarget.id
-                    : null
-                }
-              />
-            </div>
-            <div className="overflow-hidden min-h-0">
-              <MemoizedFileSharingPanel
-                noteId={id}
-                socketRef={socketRef}
-                currentUserId={user?.id}
-                highlightId={highlightTarget?.type === 'file' ? highlightTarget.id : null}
-              />
-            </div>
-          </aside>
-        )}
+        <AnimatePresence>
+          {showComments && (
+            <motion.aside
+              initial={{ x: 300, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 300, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+              aria-label="Comments and file sharing"
+              className="w-sidebar grid bg-surface-main border-l border-content-border gap-5 overflow-hidden"
+              style={{ gridTemplateRows: '2.5fr 0.7fr' }}
+            >
+              <div className="overflow-hidden min-h-0">
+                <MemoizedCommentSidebar
+                  comments={comments}
+                  onAddComment={emitAddComment}
+                  onResolve={emitResolveComment}
+                  onDelete={emitDeleteComment}
+                  currentUserId={user?.id}
+                  highlightId={
+                    highlightTarget?.type === 'comment' || highlightTarget?.type === 'comment-resolve'
+                      ? highlightTarget.id
+                      : null
+                  }
+                />
+              </div>
+              <div className="overflow-hidden min-h-0">
+                <MemoizedFileSharingPanel
+                  noteId={id}
+                  socketRef={socketRef}
+                  currentUserId={user?.id}
+                  highlightId={highlightTarget?.type === 'file' ? highlightTarget.id : null}
+                />
+              </div>
+            </motion.aside>
+          )}
+        </AnimatePresence>
       </main>
 
       <footer aria-label="Editor status">

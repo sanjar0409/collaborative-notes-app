@@ -42,7 +42,7 @@ export default function CommentSidebar({ comments, onAddComment, onResolve, onDe
     <div className="flex flex-col overflow-hidden h-full">
       <div className="flex items-center gap-2 px-4 py-3 border-b border-content-border">
         <MessageSquare className="w-4 h-4 text-content-secondary" />
-        <h3 className="font-semibold text-content-primary">Comments</h3>
+        <h3 className="font-semibold font-serif text-content-primary">Comments</h3>
         <ChevronDown className="w-4 h-4 text-content-secondary ml-auto" />
       </div>
 

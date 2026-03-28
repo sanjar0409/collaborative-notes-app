@@ -23,7 +23,7 @@ export default function SwitchNoteModal({ noteTitle, onConfirm, onCancel }) {
       aria-label="Switch note confirmation"
     >
       <div
-        className="bg-white rounded-card-lg p-6 w-full max-w-sm shadow-context"
+        className="bg-surface-main rounded-card-lg p-6 w-full max-w-sm shadow-context"
         onClick={(e) => e.stopPropagation()}
       >
         <h3 className="text-task-label font-semibold text-content-primary mb-3">

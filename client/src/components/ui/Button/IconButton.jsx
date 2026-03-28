@@ -35,7 +35,7 @@ export const IconButton = forwardRef(
           'select-none',
           sizeMap[size],
           'min-w-[44px] min-h-[44px] md:min-w-0 md:min-h-0',
-          !active && 'text-content-secondary',
+          !active && 'text-content-primary',
           !active && 'hover:bg-primary-light hover:text-primary',
           !active && 'active:bg-primary/[0.12]',
           active && 'bg-primary-light text-primary',

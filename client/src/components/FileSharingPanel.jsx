@@ -82,7 +82,7 @@ export default function FileSharingPanel({ noteId, socketRef, currentUserId, hig
   return (
     <div className="flex flex-col overflow-hidden h-full">
       <div className="flex items-center justify-between px-4 py-3">
-        <h3 className="font-semibold text-content-primary">File Sharing</h3>
+        <h3 className="font-semibold font-serif text-content-primary">File Sharing</h3>
       </div>
 
       <div className="px-4 pb-3">

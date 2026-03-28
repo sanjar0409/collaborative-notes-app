@@ -111,6 +111,8 @@ async function initDB() {
       );
 
       ALTER TABLE users ADD COLUMN IF NOT EXISTS avatar_url VARCHAR(500);
+      ALTER TABLE users ADD COLUMN IF NOT EXISTS reset_token VARCHAR(255);
+      ALTER TABLE users ADD COLUMN IF NOT EXISTS reset_token_expires TIMESTAMP;
 
       CREATE TABLE IF NOT EXISTS pending_invitations (
         id SERIAL PRIMARY KEY,

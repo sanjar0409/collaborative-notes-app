@@ -45,7 +45,7 @@ export const AuthInput = forwardRef(
               'w-full rounded-input px-4 text-body text-content-primary',
               'border-[1.5px] transition-all duration-180 ease-out',
               'placeholder:text-content-secondary',
-              'bg-white',
+              'bg-surface-main',
               size === 'default' ? 'h-12' : 'h-[52px]',
               !error && 'border-content-border',
               !error && 'focus:border-primary focus:shadow-focus-ring',
